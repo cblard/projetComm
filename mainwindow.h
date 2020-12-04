@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "ODALID.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +20,8 @@ private slots:
     void on_Connect_clicked();
     void on_Saisie_clicked();
     void on_Quit_clicked();
+    void OpenReader();
+    int card_read(BYTE);
 
 private:
     Ui::MainWindow *ui;
