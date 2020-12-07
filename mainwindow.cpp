@@ -60,7 +60,7 @@ void MainWindow::on_Connect_clicked(){
     uint8_t serial[4];
     char stackReader[20];
     status = Version(&MonLecteur, version, serial, stackReader);
-    ui->Affichage->setText(ui->Affichage->toPlainText()+ version);
+    ui->Affichage->setText(ui->Affichage->toPlainText()+ version + "\n");
     //ui->Affichage->update();
     if(status != MI_OK){
         ui->Affichage->setText(ui->Affichage->toPlainText()+"Connection failed\n");
@@ -86,7 +86,7 @@ void MainWindow::on_OpenReaderButton_clicked(){
 }
 
 void MainWindow::OpenReader(){
-    status = OpenCOM(&MonLecteur);
+    //status = OpenCOM(&MonLecteur);
     if (status != MI_OK){
         ui->Affichage->setText(ui->Affichage->toPlainText()+"Reader not found\n");
         goto done;
